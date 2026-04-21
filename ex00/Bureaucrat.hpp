@@ -25,8 +25,8 @@ class Bureaucrat
 private:
 	const std::string	_name;
 	int					_grade;
-	static const int	_highest_grade = 1;
-	static const int	_lowest_grade = 150;
+	static const int	_highestGrade = 1;
+	static const int	_lowestGrade = 150;
 
 public:
 	Bureaucrat();
