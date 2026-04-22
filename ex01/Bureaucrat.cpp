@@ -79,6 +79,34 @@ void Bureaucrat::decrementGrade()
 	++_grade;
 }
 
+/*
+	here e.what() returns correct exception because of what() overwrite in Form.hpp:
+	
+	class GradeTooHighException : public std::exception
+	{
+	public:
+		const char* what() const noexcept override
+		{
+			return "The grade is too damn high!";
+		}
+	};
+*/
+
+void Bureaucrat::signForm(Form& form) const
+{
+	try
+	{
+		form.beSigned(*this);
+		//next line is only executed if try is successful
+		std::cout << _name << " signed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout	<< _name << " couldn't sign " << form.getName()
+					<< " because: " << e.what() << std::endl;
+	}
+}
+
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &source)
 {
 	out << source.getName() << ", bureaucrat grade " << source.getGrade() << ".";
