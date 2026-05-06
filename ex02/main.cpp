@@ -2,32 +2,66 @@
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include <iostream>
 
 int	main()
 {
-	Bureaucrat bureaucrat("Literally Jesus", 1);
+	try
 	{
-		std::cout << "\nTESTING SHRUBBERY FORM:" << std::endl;
-		ShrubberyCreationForm shrub("bathroom");
-		try
+		Bureaucrat jesus("Literally Jesus", 1);
+		Bureaucrat earl("Earl", 150);
 		{
-			shrub.execute(bureaucrat);
+			std::cout << "\nTESTING SHRUBBERY FORM:" << std::endl;
+			ShrubberyCreationForm shrub("bathroom");
+			std::cout << "\nTrying to execute unsigned form:" << std::endl;
+			earl.executeForm(shrub);
+			jesus.executeForm(shrub);
+
+			std::cout << "\nTrying to sign form:" << std::endl;
+			earl.signForm(shrub);
+			jesus.signForm(shrub);
+
+			std::cout << "\nTrying to execute signed form:" << std::endl;
+			earl.executeForm(shrub);
+			jesus.executeForm(shrub);
 		}
-		catch(const std::exception& e)
 		{
-			std::cerr << e.what() << std::endl;
+			std::cout << "\nTESTING ROBOTOMY FORM:" << std::endl;
+			RobotomyRequestForm robo("Bender");
+			std::cout << "\nTrying to execute unsigned form:" << std::endl;
+			earl.executeForm(robo);
+			jesus.executeForm(robo);
+
+			std::cout << "\nTrying to sign form:" << std::endl;
+			earl.signForm(robo);
+			jesus.signForm(robo);
+
+			std::cout << "\nTrying to execute signed form:" << std::endl;
+			earl.executeForm(robo);
+			jesus.executeForm(robo);
 		}
-		bureaucrat.signForm(shrub);
-		shrub.execute(bureaucrat);
+		{
+			std::cout << "\nTESTING PARDON FORM:" << std::endl;
+			PresidentialPardonForm pardon("Fry");
+			std::cout << "\nTrying to execute unsigned form:" << std::endl;
+			earl.executeForm(pardon);
+			jesus.executeForm(pardon);
+
+			std::cout << "\nTrying to sign form:" << std::endl;
+			earl.signForm(pardon);
+			jesus.signForm(pardon);
+
+			std::cout << "\nTrying to execute signed form:" << std::endl;
+			earl.executeForm(pardon);
+			jesus.executeForm(pardon);
+		}
+		std::cout << "\nTESTS COMPLETE!\n" << std::endl;
 	}
+	catch (std::exception &e)
 	{
-		std::cout << "\nTESTING ROBOTOMY FORM:" << std::endl;
-		RobotomyRequestForm robo("Bender");
-		bureaucrat.signForm(robo);
-		for (int i = 0; i < 10; i++)
-		{
-			robo.execute(bureaucrat);
-		}
+		std::cerr << "Fatal error: " << e.what() << std::endl;
 	}
+
+	return 0;
 }
