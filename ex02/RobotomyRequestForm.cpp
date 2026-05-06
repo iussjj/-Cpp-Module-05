@@ -6,7 +6,6 @@
 
 #include "RobotomyRequestForm.hpp"
 #include <iostream>
-#include <fstream>
 #include <random>
 
 RobotomyRequestForm::RobotomyRequestForm()
@@ -16,7 +15,7 @@ RobotomyRequestForm::RobotomyRequestForm()
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target) 
-	: AForm("RobotomyRequestForm", 145, 137), _target(target)
+	: AForm("RobotomyRequestForm", 72, 45), _target(target)
 {
 	std::cout << "Robotomy Parameterized Constructor called" << std::endl;
 }
@@ -62,10 +61,11 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 
 	if (dist(gen) == 1)
 	{
-		std::cout << _target << " robotomized successfully! Yay! :)" << std::endl;
+		std::cout << "Yay, " << _target << " was robotomized successfully! :)" << std::endl;
 	}
 	else
 	{
-		std::cout << "Oh dear, the robotomy failed horrifically! Sorry about that! :(" << std::endl;
+		std::cout	<< "Oh dear, " << _target
+					<< "'s robotomy failed horrifically! Sorry about that! :(" << std::endl;
 	}
 }

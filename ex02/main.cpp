@@ -9,7 +9,7 @@ int	main()
 	Bureaucrat bureaucrat("Literally Jesus", 1);
 	{
 		std::cout << "\nTESTING SHRUBBERY FORM:" << std::endl;
-		ShrubberyCreationForm shrub("57942314");
+		ShrubberyCreationForm shrub("bathroom");
 		try
 		{
 			shrub.execute(bureaucrat);
@@ -23,7 +23,7 @@ int	main()
 	}
 	{
 		std::cout << "\nTESTING ROBOTOMY FORM:" << std::endl;
-		RobotomyRequestForm robo("814667469");
+		RobotomyRequestForm robo("Bender");
 		bureaucrat.signForm(robo);
 		for (int i = 0; i < 10; i++)
 		{

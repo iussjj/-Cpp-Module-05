@@ -7,10 +7,10 @@ CXXFLAGS	= -Wall -Wextra -Werror -std=c++20
 
 # Source files and Object files
 SRCS		=	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
-				RobotomyRequestForm.cpp
+				RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJS		=	$(SRCS:.cpp=.o)
 HEADERS		=	Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp \
-				RobotomyRequestForm.hpp
+				RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 
 # Rules
 all: $(NAME)

@@ -46,6 +46,7 @@ public:
 	
 	//const here means that the bureucrat's variables are unchanged
 	void			signForm(AForm& form) const;
+	void			executeForm(AForm const & form) const;
 
 	class GradeTooHighException : public std::exception
 	{
