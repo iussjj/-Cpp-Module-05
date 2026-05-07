@@ -43,6 +43,14 @@ public:
 	void			incrementGrade();
 	void			decrementGrade();
 
+	/*
+		-noexcept keyword means that the function will never throw 
+		an exception!
+		-override keyword explicitly specifies that we are overriding
+		a virtual function from the parent class -> it's essentially
+		a typo checker
+	*/
+
 	class GradeTooHighException : public std::exception
 	{
 	public:

@@ -9,13 +9,13 @@
 PresidentialPardonForm::PresidentialPardonForm()
 	: AForm("Presidential Pardon Form", 25, 5), _target("Unspecified")
 {
-	std::cout << "Pardon Default Constructor called" << std::endl;
+	std::cout << "Pardon default constructor called" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string& target) 
 	: AForm("Presidential Pardon Form", 25, 5), _target(target)
 {
-	std::cout << "Pardon Parameterized Constructor called" << std::endl;
+	std::cout << "Pardon parameterized constructor called" << std::endl;
 }
 
 
@@ -23,12 +23,12 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string& target)
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& source) 
 	: AForm(source), _target(source._target)
 {
-	std::cout << "Pardon Copy Constructor called" << std::endl;
+	std::cout << "Pardon copy constructor called" << std::endl;
 }
 
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& source)
 {
-	std::cout << "Pardon Assignment Operator called" << std::endl;
+	std::cout << "Pardon assignment operator called" << std::endl;
 	if (this != &source)
 	{
 		// AForm has const variables, so we only need to copy the local target
@@ -39,7 +39,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-	std::cout << "Pardon Destructor called" << std::endl;
+	std::cout << "Pardon destructor called" << std::endl;
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const

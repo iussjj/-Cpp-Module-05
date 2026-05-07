@@ -5,13 +5,13 @@
 ShrubberyCreationForm::ShrubberyCreationForm()
 	: AForm("Shrubbery Creation Form", 145, 137), _target("Unspecified")
 {
-	std::cout << "Shrubbery Default Constructor called" << std::endl;
+	std::cout << "Shrubbery default constructor called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target) 
-	: AForm("ShrubberyCreationForm", 145, 137), _target(target)
+	: AForm("Shrubbery Creation Form", 145, 137), _target(target)
 {
-	std::cout << "Shrubbery Parameterized Constructor called" << std::endl;
+	std::cout << "Shrubbery parameterized constructor called" << std::endl;
 }
 
 
@@ -19,12 +19,12 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target)
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& source) 
 	: AForm(source), _target(source._target)
 {
-	std::cout << "Shrubbery Copy Constructor called" << std::endl;
+	std::cout << "Shrubbery copy constructor called" << std::endl;
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& source)
 {
-	std::cout << "Shrubbery Assignment Operator called" << std::endl;
+	std::cout << "Shrubbery assignment operator called" << std::endl;
 	if (this != &source)
 	{
 		// AForm has const variables, so we only need to copy the local target
@@ -35,7 +35,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-	std::cout << "Shrubbery Destructor called" << std::endl;
+	std::cout << "Shrubbery destructor called" << std::endl;
 }
 
 /*

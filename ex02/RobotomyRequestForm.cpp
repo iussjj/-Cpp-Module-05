@@ -11,13 +11,13 @@
 RobotomyRequestForm::RobotomyRequestForm()
 	: AForm("Robotomy Request Form", 72, 45), _target("Unspecified")
 {
-	std::cout << "Robotomy Default Constructor called" << std::endl;
+	std::cout << "Robotomy default constructor called" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target) 
-	: AForm("RobotomyRequestForm", 72, 45), _target(target)
+	: AForm("Robotomy Request Form", 72, 45), _target(target)
 {
-	std::cout << "Robotomy Parameterized Constructor called" << std::endl;
+	std::cout << "Robotomy parameterized constructor called" << std::endl;
 }
 
 
@@ -25,12 +25,12 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string& target)
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& source) 
 	: AForm(source), _target(source._target)
 {
-	std::cout << "Robotomy Copy Constructor called" << std::endl;
+	std::cout << "Robotomy copy constructor called" << std::endl;
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& source)
 {
-	std::cout << "Robotomy Assignment Operator called" << std::endl;
+	std::cout << "Robotomy assignment operator called" << std::endl;
 	if (this != &source)
 	{
 		// AForm has const variables, so we only need to copy the local target
@@ -41,7 +41,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& s
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-	std::cout << "Robotomy Destructor called" << std::endl;
+	std::cout << "Robotomy destructor called" << std::endl;
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
